@@ -1,0 +1,66 @@
+definitions:
+  main.SMSRequest:
+    description: SMS request structure with number, message, and sender
+    properties:
+      date:
+        description: '@param date query string false "Date and time the message will
+          be sent in yyyy-MM-dd HH:mm format. If not provided, the message will be
+          sent as soon as possible"'
+        type: string
+      message:
+        description: '@param message query string true "The message to be sent"'
+        type: string
+      number:
+        description: '@param number query Use the formatted "to" field (either single
+          or array) "Phone number. The number(s) that will receive the message"'
+      reference:
+        description: '@param reference query string false "Custom reference. A string
+          of max. 255 characters"'
+        type: string
+      sender:
+        description: '@param sender query string true "Sender. The number or name
+          of the sender. A number can''t be longer than 14 characters. A name can''t
+          be longer than 11 characters and can''t contain special characters or spaces"'
+        type: string
+      subid:
+        description: '@param subid query string false "ID of a subaccount. If specified,
+          the message will be sent from the subaccount"'
+        type: string
+      test:
+        description: '@param test query bool false "If true, the system will check
+          all parameters but will not send an SMS message (no credits/balance used)"'
+        type: boolean
+    type: object
+info:
+  contact: {}
+  description: SMS request structure with number, message, and sender
+paths:
+  /send-sms:
+    post:
+      consumes:
+      - application/json
+      description: Sends an SMS message to a specified phone number
+      parameters:
+      - description: Send SMS request
+        in: body
+        name: sms
+        required: true
+        schema:
+          $ref: '#/definitions/main.SMSRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: SMS sent successfully
+          schema:
+            type: string
+        "400":
+          description: Invalid request body
+          schema:
+            type: string
+        "500":
+          description: Internal server error
+          schema:
+            type: string
+      summary: Send SMS
+swagger: "2.0"

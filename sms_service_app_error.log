@@ -1,0 +1,2 @@
+ERROR: 2024/12/31 23:55:26 main.go:134: Failed to send message: {"error":108,"errorMsg":"Not enough credits."}
+ERROR: 2024/12/31 23:55:41 main.go:134: Failed to send message: {"error":108,"errorMsg":"Not enough credits."}

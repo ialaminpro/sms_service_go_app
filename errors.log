@@ -1,0 +1,3 @@
+ERROR: 2024/12/31 23:47:08 main.go:134: Failed to send message: 403 Forbidden
+ERROR: 2024/12/31 23:48:26 main.go:134: Failed to send message: [123 34 101 114 114 111 114 34 58 49 48 56 44 34 101 114 114 111 114 77 115 103 34 58 34 78 111 116 32 101 110 111 117 103 104 32 99 114 101 100 105 116 115 46 34 125]
+ERROR: 2024/12/31 23:48:53 main.go:134: Failed to send message: {"error":108,"errorMsg":"Not enough credits."}
